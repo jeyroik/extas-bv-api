@@ -3,8 +3,8 @@
   "description": "Extas bv api package",
   "require": {
     "jeyroik/extas-base": "*",
-    "jeyroik/bv": "*",
-    "jeyroik/jsonrpc": "*"
+    "jeyroik/extas-bv": "*",
+    "jeyroik/extas-jsonrpc": "*"
   },
   "autoload": {
     "psr-4": {
