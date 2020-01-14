@@ -1,0 +1,57 @@
+{
+  "name": "extas/bv-api",
+  "jsonrpc_operations": [
+    {
+      "name": "category.index",
+      "title": "Категории",
+      "description": "Список категорий",
+      "method": "index",
+      "item_name": "category",
+      "item_class": "extas\\interfaces\\bv\\ICategory",
+      "item_repo": "extas\\interfaces\\bv\\ICategoryRepository",
+      "class": "extas\\components\\jsonrpc\\operations\\Index",
+      "filter": "extas\\components\\jsonrpc\\operations\\filters\\FilterDefault",
+      "spec": {
+        "request": {},
+        "response": {}
+      }
+    },
+    {
+      "name": "calculation.do",
+      "title": "Посчитать",
+      "description": "Посчитать сумму БЦ",
+      "method": "do",
+      "class": "extas\\components\\bv\\jsonrpc\\CalculationDo",
+      "item_name": "",
+      "item_class": "",
+      "item_repo": "",
+      "filter": "",
+      "spec": {
+        "request": {
+          "type": "object",
+          "properties": {
+            "items": {
+              "type": "array",
+              "properties": {
+                "subcategory_name": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "response": {
+          "type": "object",
+          "properties": {
+            "sum": {
+              "type": "int"
+            },
+            "hash": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  ]
+}
