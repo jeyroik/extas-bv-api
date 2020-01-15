@@ -1,21 +1,12 @@
 {
   "name": "extas/bv-api",
-  "jsonrpc_operations": [
+  "plugins": [
     {
-      "name": "category.index",
-      "title": "Категории",
-      "description": "Список категорий",
-      "method": "index",
-      "item_name": "category",
-      "item_class": "extas\\interfaces\\bv\\ICategory",
-      "item_repo": "extas\\interfaces\\bv\\ICategoryRepository",
-      "class": "extas\\components\\jsonrpc\\operations\\Index",
-      "filter": "extas\\components\\jsonrpc\\operations\\filters\\FilterDefault",
-      "spec": {
-        "request": {},
-        "response": {}
-      }
-    },
+      "class": "extas\\components\\plugins\\bv\\expands\\CategoryExpandBySubcategories",
+      "stage": "expand.index.category"
+    }
+  ],
+  "jsonrpc_operations": [
     {
       "name": "calculation.do",
       "title": "Посчитать",
