@@ -42,7 +42,7 @@ class CategoryExpandBySubcategories extends PluginExpandAbstract
         $categoriesByNames = array_column($categories, null, ICategory::FIELD__NAME);
 
         $subRepo = SystemContainer::getItem(ISubcategoryRepository::class);
-        $subs = $subRepo->all([ISubcategory::FIELD__NAME => $categoryNames]);
+        $subs = $subRepo->all([ISubcategory::FIELD__CATEGORY_NAME => $categoryNames]);
 
         foreach ($subs as $sub) {
             $cat = $sub->getCategoryName();
