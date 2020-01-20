@@ -5,8 +5,8 @@ use extas\components\jsonrpc\operations\OperationDispatcher;
 use extas\components\SystemContainer;
 use extas\interfaces\bv\ISubcategory;
 use extas\interfaces\bv\ISubcategoryRepository;
+use extas\interfaces\jsonrpc\IRequest;
 use extas\interfaces\jsonrpc\IResponse;
-use extas\interfaces\servers\requests\IServerRequest;
 
 /**
  * Class CalculationDo
@@ -17,13 +17,12 @@ use extas\interfaces\servers\requests\IServerRequest;
 class CalculationDo extends OperationDispatcher
 {
     /**
-     * @param IServerRequest $jsonRpcRequest
-     * @param IResponse $jsonRpcResponse
-     * @param array $data
+     * @param IRequest $request
+     * @param IResponse $response
      */
-    public function __invoke(IServerRequest $jsonRpcRequest, IResponse &$jsonRpcResponse, array $data)
+    protected function dispatch(IRequest $request, IResponse &$response)
     {
-        $items = $data['items'] ?? [];
+        $items = $request->getData()['items'] ?? [];
         /**
          * @var $subCatRepo ISubcategoryRepository
          * @var $subCats ISubcategory[]
@@ -41,7 +40,7 @@ class CalculationDo extends OperationDispatcher
             $hash .= substr($subCat->getName(), 0, 3) . $subCat->getWeight();
         }
 
-        $jsonRpcResponse->success([
+        $response->success([
             'sum' => $sum,
             'hash' => $hash
         ]);

@@ -4,6 +4,7 @@
   "require": {
     "jeyroik/extas-base": "*",
     "jeyroik/extas-bv": "*",
+    "jeyroik/extas-bv-profiles": "*",
     "jeyroik/extas-jsonrpc": "*"
   },
   "autoload": {
