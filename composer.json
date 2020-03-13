@@ -2,10 +2,10 @@
   "name": "jeyroik/extas-bv-api",
   "description": "Extas bv api package",
   "require": {
-    "jeyroik/extas-base": "*",
-    "jeyroik/extas-bv": "*",
-    "jeyroik/extas-bv-profiles": "*",
-    "jeyroik/extas-jsonrpc": "*"
+    "jeyroik/extas-base": "1.*",
+    "jeyroik/extas-bv": "1.*",
+    "jeyroik/extas-bv-profiles": "1.*",
+    "jeyroik/extas-jsonrpc": "1.*"
   },
   "autoload": {
     "psr-4": {
