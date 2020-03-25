@@ -2,7 +2,7 @@
   "name": "jeyroik/extas-bv-api",
   "description": "Extas bv api package",
   "require": {
-    "jeyroik/extas-base": "1.*",
+    "jeyroik/extas-base": "2.*",
     "jeyroik/extas-bv": "1.*",
     "jeyroik/extas-bv-profiles": "1.*",
     "jeyroik/extas-jsonrpc": "1.*"
